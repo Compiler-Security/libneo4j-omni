@@ -21,6 +21,7 @@ TAGS
 **/doc/html
 **/doc/latex
 **/doc/man
+**/doc/xml
 **/doc/*.pdf
 **/doc/*.tag
 **/test/*.trs
@@ -49,3 +50,4 @@ TAGS
 /libneo4j-client-*.tar.gz
 /libtool
 /shell/src/neo4j-client
+/build
