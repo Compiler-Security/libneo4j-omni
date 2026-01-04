@@ -321,11 +321,13 @@ neo4j_result_stream_t *tx_run(neo4j_transaction_t *tx,
     }
   if (neo4j_check_failure(tx->results))
     {
-      if (strcmp(neo4j_error_code(tx->results),
-                 "Neo.ClientError.Transaction.TransactionTimedOut") == 0) {
-        tx->failed = 1;
-        tx->is_expired = 1;
-        return NULL;
+      const char* error_code = neo4j_error_code(tx->results);
+      if (error_code && strcmp(error_code,
+        "Neo.ClientError.Transaction.TransactionTimedOut")== 0)
+      {
+          tx->failed = 1;
+          tx->is_expired = 1;
+          return NULL;
       }
     }
   return tx->results;
