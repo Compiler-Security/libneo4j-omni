@@ -40,7 +40,7 @@ int neo4j_tx_failure(neo4j_transaction_t *tx);
 int neo4j_tx_timeout(neo4j_transaction_t *tx);
 const char *neo4j_tx_mode(neo4j_transaction_t *tx);
 const char *neo4j_tx_failure_code(neo4j_transaction_t *tx);
-const char *neo4j_tx_failure_message(neo4j_transaction_t *tx);
+neo4j_value_t neo4j_tx_failure_message(neo4j_transaction_t *tx);
 const char *neo4j_tx_commit_bookmark(neo4j_transaction_t *tx);
 void neo4j_free_tx(neo4j_transaction_t *tx);
 

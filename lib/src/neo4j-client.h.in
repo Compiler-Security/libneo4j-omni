@@ -2109,13 +2109,13 @@ __neo4j_must_check
 const char *neo4j_tx_failure_code(neo4j_transaction_t *tx);
 
 /**
- * Retrieve the failure message of a failed transaction as a string.
+ * Retrieve the failure message of a failed transaction as a neo4j_value of type NEO4J_STRING.
  *
  * @param [tx] The transaction.
- * @return string (the failure message)
+ * @return neo4j_value of type NEO4J_STRING (the failure message)
  */
 __neo4j_must_check
-const char *neo4j_tx_failure_message(neo4j_transaction_t *tx);
+neo4j_value_t neo4j_tx_failure_message(neo4j_transaction_t *tx);
 
 /**
  * Retrieve the server's bookmark of a committed transaction as a string.
